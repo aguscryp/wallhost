@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall Host | Alquiler Directo y Presentación de Alojamientos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        wall: {
+                            50: '#f4f7fa',
+                            100: '#e4ebf2',
+                            200: '#cbd8e6',
+                            300: '#9bb2cd',
+                            400: '#688ab0',
+                            500: '#436792',
+                            600: '#2d4f77',
+                            700: '#223d5f',
+                            800: '#1b324e',
+                            900: '#15293f',
+                            950: '#0d1928',
+                        }
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(15px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideDown: {
+                            '0%': { opacity: '0', transform: 'scale(0.95) translateY(-10px)' },
+                            '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { 
+                                boxShadow: '0 0 0 0 rgba(16, 185, 129, 0.7), 0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                                transform: 'scale(1)'
+                            },
+                            '50%': { 
+                                boxShadow: '0 0 0 16px rgba(16, 185, 129, 0), 0 20px 25px -5px rgba(0, 0, 0, 0.2)',
+                                transform: 'scale(1.03)'
+                            }
+                        }
+                    },
+                    animation: {
+                        fadeIn: 'fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        slideDown: 'slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        pulseGlow: 'pulseGlow 2s infinite ease-in-out',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .transition-all-custom {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .highlight-wsp {
+            animation: pulseGlow 1.5s ease-in-out 3;
+            border: 2px solid #34d399 !important;
+        }
+    </style>
+</head>
+<body class="bg-wall-50 text-wall-900 font-sans antialiased selection:bg-wall-600 selection:text-white flex flex-col min-h-screen justify-between overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-wall-100 shadow-sm transition-all-custom">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 transition-transform duration-300 hover:scale-105 cursor-pointer">
+                <div class="w-10 h-10 bg-wall-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-wall-700/30">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight text-wall-900">Wall<span class="text-wall-500">Host</span></span>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-wall-700">
+                <a href="departamentos.html" class="hover:text-wall-500 transition-all duration-300 flex items-center space-x-1.5 hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 text-wall-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    <span>Buscar Alojamiento</span>
+                </a>
+                <a href="#propietarios" class="hover:text-wall-500 transition-all duration-300 flex items-center space-x-1.5 hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 text-wall-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    <span>Alojar mi Propiedad</span>
+                </a>
+                <a href="#galeria" class="hover:text-wall-500 transition-all duration-300 flex items-center space-x-1.5 hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 text-wall-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <span>Ejemplares en Argentina</span>
+                </a>
+                <a href="https://wa.me/5492645615296?text=Hola%20Agustín,%20quiero%20asesoría%20sobre%20Wall%20Host" target="_blank" class="hover:text-wall-500 transition-all duration-300 flex items-center space-x-1.5 hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.148-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>Asesoría WhatsApp</span>
+                </a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="departamentos.html" class="bg-wall-700 hover:bg-wall-800 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-wall-700/20 transition-all-custom hover:scale-105 active:scale-95">Ver Departamentos</a>
+            </div>
+
+            <div class="md:hidden flex items-center">
+                <button id="menu-btn" class="text-wall-700 focus:outline-none p-2 rounded-xl hover:bg-wall-100 transition-all duration-300">
+                    <svg id="menu-icon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-wall-100 px-6 py-6 space-y-4 shadow-2xl transition-all duration-300 origin-top">
+            <a href="departamentos.html" class="block text-base font-medium text-wall-700 hover:text-wall-500 transition-transform hover:translate-x-1">Buscar Alojamiento</a>
+            <a href="#propietarios" class="block text-base font-medium text-wall-700 hover:text-wall-500 transition-transform hover:translate-x-1">Alojar mi Propiedad</a>
+            <a href="#galeria" class="block text-base font-medium text-wall-700 hover:text-wall-500 transition-transform hover:translate-x-1">Ejemplares en Argentina</a>
+            <a href="https://wa.me/5492645615296?text=Hola%20Agustín,%20quiero%20asesoría%20sobre%20Wall%20Host" target="_blank" class="block text-base font-medium text-emerald-600 flex items-center space-x-2 transition-transform hover:translate-x-1">
+                <span>Asesoría WhatsApp (+54 9 264 561 5296)</span>
+            </a>
+            <div class="pt-4 border-t border-wall-100">
+                <a href="departamentos.html" class="block text-center bg-wall-700 hover:bg-wall-800 text-white text-sm font-semibold px-5 py-3 rounded-xl shadow-md transition-all">Ver Departamentos</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-32 pb-20 flex items-center bg-gradient-to-b from-white via-wall-50 to-wall-100">
+        <div class="max-w-5xl mx-auto px-6 text-center space-y-8 animate-fadeIn">
+            <div class="inline-flex items-center space-x-2 bg-wall-200/60 border border-wall-300 px-3.5 py-1.5 rounded-full text-xs font-semibold text-wall-800 shadow-sm transition-transform hover:scale-105 duration-300">
+                <span class="w-2 h-2 rounded-full bg-wall-600 animate-pulse"></span>
+                <span>Alquiler directo con el dueño y presentación profesional en Argentina</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-wall-950 leading-tight">
+                Bienvenido a <span class="text-wall-600 inline-block transition-transform hover:scale-105 duration-300">Wall Host</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-wall-600 max-w-2xl mx-auto leading-relaxed">
+                La plataforma inteligente para conectar huéspedes con alojamientos temporarios en todo el país o ayudar a propietarios a destacar su depto, monoambiente u hotel en la web con trato directo.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto pt-6">
+                <div class="bg-white p-8 rounded-3xl shadow-xl shadow-wall-900/5 border border-wall-200 flex flex-col justify-between space-y-6 text-left transition-all-custom hover:-translate-y-2 hover:shadow-2xl hover:border-wall-300">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-wall-700 rounded-2xl flex items-center justify-center text-white shadow-md transition-transform duration-300 hover:rotate-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-wall-900">¿Buscas un Alojamiento?</h3>
+                        <p class="text-sm text-wall-600">Explora departamentos, monoambientes y hoteles disponibles en Argentina. Habla y coordina directo con el dueño sin intermediarios.</p>
+                    </div>
+                    <a href="departamentos.html" class="w-full bg-wall-700 hover:bg-wall-800 text-white font-semibold py-3.5 px-4 rounded-xl text-center shadow-md transition-all-custom flex items-center justify-center space-x-2 group">
+                        <span>Ver Departamentos</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-xl shadow-wall-900/5 border border-wall-200 flex flex-col justify-between space-y-6 text-left transition-all-custom hover:-translate-y-2 hover:shadow-2xl hover:border-wall-300">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-wall-800 rounded-2xl flex items-center justify-center text-white shadow-md transition-transform duration-300 hover:rotate-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-wall-900">¿Tienes un Alojamiento?</h3>
+                        <p class="text-sm text-wall-600">Sube tu depto u hotel con nosotros. Te ofrecemos web propia, presentación profesional y atención al cliente.</p>
+                    </div>
+                    <a href="#propietarios" id="btn-alojar" class="w-full bg-wall-100 hover:bg-wall-200 text-wall-800 font-semibold py-3.5 px-4 rounded-xl text-center border border-wall-300 transition-all-custom hover:shadow-md block">
+                        Alojar mi Propiedad
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="galeria" class="py-24 bg-white border-t border-wall-200">
+        <div class="max-w-6xl mx-auto px-6 space-y-12">
+            <div class="text-center space-y-3">
+                <span class="text-xs uppercase tracking-widest text-wall-500 font-bold bg-wall-100 px-3 py-1 rounded-full">Ejemplares de Presentación en Argentina</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-wall-950">Muestras de Diseño Web Inmobiliario</h2>
+                <p class="text-wall-600 max-w-xl mx-auto text-sm sm:text-base">Modelos referenciales que ilustran el estándar visual con el que presentamos alojamientos en distintas regiones de Argentina. (No corresponden a unidades disponibles para alquiler inmediato).</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-wall-50 rounded-3xl overflow-hidden border border-wall-200 shadow-xl shadow-wall-900/10 transition-all-custom hover:-translate-y-2 hover:shadow-2xl group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" alt="Departamento Palermo Buenos Aires" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-wall-950/70 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md text-wall-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Palermo Soho, Buenos Aires</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-wall-900">Loft Urbano (Ejemplar)</h3>
+                        <p class="text-xs text-wall-600 leading-relaxed">Diseño moderno con estilo porteño, ventanales luminosos y detalles de categoría para zonas urbanas de CABA.</p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-wall-500">Trato Directo con Propietario</span>
+                            <span class="text-xs font-bold text-wall-700 bg-wall-200 px-2.5 py-1 rounded-md">Ejemplar de Muestra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-wall-50 rounded-3xl overflow-hidden border border-wall-200 shadow-xl shadow-wall-900/10 transition-all-custom hover:-translate-y-2 hover:shadow-2xl group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Residencia Serrana Córdoba" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-wall-950/70 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md text-wall-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">Sierras de Córdoba / Carlos Paz</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-wall-900">Suite Serrana (Ejemplar)</h3>
+                        <p class="text-xs text-wall-600 leading-relaxed">Arquitectura integrada con el paisaje de las sierras cordobesas, madera cálida y visuales despejadas.</p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-wall-500">Trato Directo con Propietario</span>
+                            <span class="text-xs font-bold text-wall-700 bg-wall-200 px-2.5 py-1 rounded-md">Ejemplar de Muestra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-wall-50 rounded-3xl overflow-hidden border border-wall-200 shadow-xl shadow-wall-900/10 transition-all-custom hover:-translate-y-2 hover:shadow-2xl group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80" alt="Cabaña de Lujo Patagonia Bariloche" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-wall-950/70 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md text-wall-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">San Carlos de Bariloche</span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-lg font-bold text-wall-900">Refugio Patagónico (Ejemplar)</h3>
+                        <p class="text-xs text-wall-600 leading-relaxed">Estilo alpino con chimenea, confort térmico superior y ambientación ideal para destinos turísticos del sur argentino.</p>
+                        <div class="pt-2 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-wall-500">Trato Directo con Propietario</span>
+                            <span class="text-xs font-bold text-wall-700 bg-wall-200 px-2.5 py-1 rounded-md">Ejemplar de Muestra</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="propietarios" class="py-24 bg-wall-50 border-t border-wall-200">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <div class="space-y-3">
+                <h2 class="text-3xl font-extrabold text-wall-950">Aloja tu departamento, monoambiente o hotel</h2>
+                <p class="text-wall-600 text-base max-w-2xl mx-auto">
+                    Estructuramos tu propiedad de manera impecable en nuestra web para que los inquilinos interesados contacten directamente contigo.
+                </p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-3xl border border-wall-200 shadow-xl shadow-wall-900/5 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                <div class="space-y-2 transition-transform hover:scale-105 duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-wall-100 flex items-center justify-center text-wall-700 shadow-sm">🌐</div>
+                    <h4 class="font-bold text-wall-900 text-sm">Web y Presentación</h4>
+                    <p class="text-xs text-wall-600">Diseño visual profesional y optimizado para destacar tu espacio al máximo.</p>
+                </div>
+                <div class="space-y-2 transition-transform hover:scale-105 duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-wall-100 flex items-center justify-center text-wall-700 shadow-sm">💬</div>
+                    <h4 class="font-bold text-wall-900 text-sm">Trato Directo</h4>
+                    <p class="text-xs text-wall-600">Los huéspedes hablan contigo directamente para cerrar su estadía sin comisiones ocultas.</p>
+                </div>
+                <div class="space-y-2 transition-transform hover:scale-105 duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-wall-100 flex items-center justify-center text-wall-700 shadow-sm">🤝</div>
+                    <h4 class="font-bold text-wall-900 text-sm">Atención Profesional</h4>
+                    <p class="text-xs text-wall-600">Soporte y asesoría personalizada de la mano de nuestros expertos en Argentina.</p>
+                </div>
+            </div>
+
+            <div class="bg-wall-900 text-white p-8 rounded-3xl shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6 text-left transition-all-custom hover:scale-[1.01]">
+                <div class="space-y-1">
+                    <span class="text-xs uppercase tracking-widest text-wall-400 font-bold">Atención Fundadora Directa</span>
+                    <h4 class="text-xl font-bold">Agustín Fernandez</h4>
+                    <p class="text-xs text-wall-300">Asesor Fundador de Wall Host · Asesoría personal mega estructurada.</p>
+                </div>
+                <a href="https://wa.me/5492645615296?text=Hola%20Agustín,%20quiero%20subir%20mi%20alojamiento%20a%20Wall%20Host" target="_blank" id="whatsapp-btn" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-600/30 transition-all-custom hover:scale-105 active:scale-95 flex items-center space-x-2 shrink-0">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.148-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>Contactar por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-wall-950 text-wall-400 py-8 border-t border-wall-900 text-center text-xs space-y-1">
+        <p>© 2026 Wall Host. Todos los derechos reservados.</p>
+        <p class="text-wall-500">Asesoría institucional a cargo de Agustín Fernandez (+54 9 264 561 5296)</p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        let isOpen = false;
+
+        btn.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if (isOpen) {
+                menu.classList.remove('hidden');
+                menu.style.animation = 'slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+                menuIcon.style.transform = 'rotate(90deg)';
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>';
+            } else {
+                menuIcon.style.transform = 'rotate(0deg)';
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>';
+                menu.classList.add('hidden');
+            }
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                isOpen = false;
+                menuIcon.style.transform = 'rotate(0deg)';
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>';
+                menu.classList.add('hidden');
+            });
+        });
+
+        const btnAlojar = document.getElementById('btn-alojar');
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+
+        btnAlojar.addEventListener('click', (e) => {
+            whatsappBtn.classList.remove('highlight-wsp');
+            void whatsappBtn.offsetWidth;
+            whatsappBtn.classList.add('highlight-wsp');
+        });
+    </script>
+
+</body>
+</html>
