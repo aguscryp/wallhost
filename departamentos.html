@@ -17,15 +17,49 @@
                             400: '#688ab0', 500: '#436792', 600: '#2d4f77', 700: '#223d5f',
                             800: '#1b324e', 900: '#15293f', 950: '#0d1928',
                         }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-wall-50 text-wall-900 font-sans antialiased flex flex-col min-h-screen justify-between">
+<body class="bg-wall-50 text-wall-900 font-sans antialiased flex flex-col min-h-screen justify-between relative">
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-wall-100 shadow-sm">
+    <div id="loader-pantalla" class="fixed inset-0 z-50 bg-wall-950/95 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-opacity duration-700">
+        
+        <div class="absolute w-96 h-96 bg-wall-600/20 rounded-full blur-3xl animate-pulse"></div>
+
+        <div class="relative z-10 flex flex-col items-center space-y-6 text-center px-4 animate-fade-in">
+            
+            <div class="w-20 h-20 bg-gradient-to-br from-wall-600 to-wall-800 rounded-3xl flex items-center justify-center text-white shadow-2xl shadow-wall-500/50 border border-wall-500/40 animate-pulse-slow">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            </div>
+
+            <div class="space-y-2">
+                <h2 class="text-3xl font-black tracking-tight text-white">Wall<span class="text-wall-400">Host</span></h2>
+                <p class="text-sm font-medium text-wall-300 tracking-wide">Derivando información al alojamiento...</p>
+            </div>
+
+            <div class="w-64 h-1.5 bg-wall-900 rounded-full overflow-hidden border border-wall-800">
+                <div id="barra-progreso" class="h-full bg-gradient-to-r from-wall-400 to-white w-0 transition-all duration-[3000ms] ease-out"></div>
+            </div>
+
+            <span class="text-xs text-wall-500 uppercase tracking-widest">Conexión Segura con Dueño Directo</span>
+        </div>
+    </div>
+
+
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-wall-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-3 transition-transform duration-300 hover:scale-105">
                 <div class="w-10 h-10 bg-wall-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-wall-700/30">
@@ -151,7 +185,7 @@
                                             </div>
                                         </div>
                                         <div class="space-y-2.5 pt-2">
-                                            <a href="${depto.linkVerDepto}" class="w-full bg-wall-700 hover:bg-wall-800 text-white font-semibold py-3 px-4 rounded-xl text-center shadow-md transition-all block text-sm">
+                                            <a href="#" onclick="interpolarDerivacion(event, '${depto.linkVerDepto}')" class="w-full bg-wall-700 hover:bg-wall-800 text-white font-semibold py-3 px-4 rounded-xl text-center shadow-md transition-all block text-sm">
                                                 Ver depto
                                             </a>
                                             <a href="${depto.linkZona}" class="w-full bg-wall-100 hover:bg-wall-200 text-wall-800 font-semibold py-2.5 px-4 rounded-xl text-center transition-all block text-xs border border-wall-200 flex items-center justify-center space-x-1.5">
@@ -184,6 +218,28 @@
 
                         mostrarCards(filtrados);
                     });
+
+                    // FUNCIÓN DE ANIMACIÓN DE Carga de 3 Segundos
+                    function interpolarDerivacion(event, destinoUrl) {
+                        event.preventDefault(); // Evita que abra de inmediato
+                        
+                        const loader = document.getElementById('loader-pantalla');
+                        const barra = document.getElementById('barra-progreso');
+
+                        // Muestra la pantalla con efecto de fade
+                        loader.classList.remove('opacity-0', 'pointer-events-none');
+                        loader.classList.add('opacity-100');
+
+                        // Activa el llenado de la barra de progreso
+                        setTimeout(() => {
+                            barra.style.width = '100%';
+                        }, 50);
+
+                        // Espera exactamente 3 segundos (3000 milisegundos) y redirige
+                        setTimeout(() => {
+                            window.location.href = destinoUrl;
+                        }, 3000);
+                    }
                 </script>
 
             </div>
