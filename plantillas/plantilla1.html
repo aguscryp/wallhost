@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador Oficial | Wall Host Creator</title>
+    <title>Generador Oficial Wall Host | Panel Completo</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -33,11 +33,11 @@
                 </div>
                 <div>
                     <span class="text-2xl font-black tracking-tight text-wall-900">Wall<span class="text-wall-500">Host</span></span>
-                    <span class="text-xs uppercase tracking-widest text-wall-500 font-bold block">Generador de Landing Pages</span>
+                    <span class="text-xs uppercase tracking-widest text-wall-500 font-bold block">Generador Oficial</span>
                 </div>
             </div>
             <span class="text-xs bg-emerald-50 text-emerald-700 font-bold px-4 py-2 rounded-xl border border-emerald-200">
-                Panel de Administración Local
+                Sistema Operativo
             </span>
         </div>
     </header>
@@ -47,52 +47,50 @@
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
         </div>
         <div>
-            <p class="font-black text-sm">¡Código copiado al portapapeles!</p>
-            <p class="text-[11px] text-wall-300 font-normal">Pégalo directamente en tu archivo .html nuevo.</p>
+            <p class="font-black text-sm">¡Código copiado al portapapeles con éxito!</p>
+            <p class="text-[11px] text-wall-300 font-normal">Ya puedes pegarlo en tu nuevo archivo HTML.</p>
         </div>
     </div>
 
     <main class="flex-grow py-10 px-6">
-        <div class="max-w-5xl mx-auto space-y-10">
-
+        <div class="max-w-4xl mx-auto space-y-8">
             <div class="bg-white rounded-3xl p-8 sm:p-10 border border-wall-200 shadow-xl space-y-6">
                 <div>
-                    <h1 class="text-2xl sm:text-3xl font-black text-wall-950 tracking-tight">Rellena los datos de la nueva propiedad</h1>
-                    <p class="text-sm text-wall-600">Completa el formulario, presiona el botón y el código HTML completo se copiará automáticamente listo para usar.</p>
+                    <h1 class="text-2xl sm:text-3xl font-black text-wall-950 tracking-tight">Rellena los datos de la propiedad</h1>
+                    <p class="text-sm text-wall-600">Configura la información del anfitrión, fotos, cochera y más alojamientos propios.</p>
                 </div>
 
-                <form id="form-generador" class="space-y-6">
-                    
+                <div class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-xs font-bold uppercase tracking-wider text-wall-700">Nombre del Anfitrión</label>
-                            <input type="text" id="in-anfitrion" value="Hugo Amadey" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:border-wall-600" required>
+                            <input type="text" id="in-anfitrion" value="Hugo Amadey" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:border-wall-600">
                         </div>
                         <div class="space-y-2">
-                            <label class="text-xs font-bold uppercase tracking-wider text-wall-700">WhatsApp del Anfitrión (Sin + ni espacios)</label>
-                            <input type="text" id="in-whatsapp" value="5492645615296" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:border-wall-600" required>
+                            <label class="text-xs font-bold uppercase tracking-wider text-wall-700">WhatsApp (Sin + ni espacios)</label>
+                            <input type="text" id="in-whatsapp" value="5492645615296" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:border-wall-600">
                         </div>
                     </div>
 
                     <div class="space-y-2">
-                        <label class="text-xs font-bold uppercase tracking-wider text-wall-700">Título de la Propiedad / Ubicación</label>
-                        <input type="text" id="in-titulo" value="Villa Carlos Paz, Caseros 50" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:border-wall-600" required>
+                        <label class="text-xs font-bold uppercase tracking-wider text-wall-700">Título / Ubicación de la Propiedad</label>
+                        <input type="text" id="in-titulo" value="Villa Carlos Paz, Caseros 50" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:border-wall-600">
                     </div>
 
                     <div class="space-y-2">
-                        <label class="text-xs font-bold uppercase tracking-wider text-wall-700">Descripción Corta</label>
-                        <textarea id="in-descripcion" rows="3" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:border-wall-600" required>Departamento con excelentes vistas, ubicado a solo 50 metros de la peatonal, ideal para disfrutar de la ciudad con total comodidad y cercanía.</textarea>
+                        <label class="text-xs font-bold uppercase tracking-wider text-wall-700">Descripción</label>
+                        <textarea id="in-descripcion" rows="3" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:border-wall-600">Departamento con excelentes vistas, ubicado a solo 50 metros de la peatonal, ideal para disfrutar de la ciudad con total comodidad.</textarea>
                     </div>
 
-                    <div class="space-y-4 pt-4 border-t border-wall-100">
-                        <h3 class="text-base font-black text-wall-900">URLs de Imágenes (6 Fotos en Alta Definición)</h3>
+                    <div class="space-y-3 pt-4 border-t border-wall-100">
+                        <h3 class="text-sm font-black text-wall-900 uppercase tracking-wider">URLs de Imágenes (6 Fotos)</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="url" id="in-img1" value="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 1 URL">
-                            <input type="url" id="in-img2" value="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 2 URL">
-                            <input type="url" id="in-img3" value="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 3 URL">
-                            <input type="url" id="in-img4" value="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 4 URL">
-                            <input type="url" id="in-img5" value="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 5 URL">
-                            <input type="url" id="in-img6" value="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 6 URL">
+                            <input type="url" id="in-img1" value="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 1">
+                            <input type="url" id="in-img2" value="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 2">
+                            <input type="url" id="in-img3" value="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 3">
+                            <input type="url" id="in-img4" value="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 4">
+                            <input type="url" id="in-img5" value="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 5">
+                            <input type="url" id="in-img6" value="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Foto 6">
                         </div>
                     </div>
 
@@ -106,25 +104,39 @@
                         </div>
                         <div class="space-y-2">
                             <label class="text-xs font-bold uppercase tracking-wider text-wall-700">Código Iframe Google Maps</label>
-                            <input type="text" id="in-mapa" value='<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0716612959685!2d-64.49987622347717!3d-31.416203596770908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942d66352932ecfb%3A0x8ac7cbe9c00b0e51!2sCaseros%2050%2C%20X5152%20Villa%20Carlos%20Paz%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>' class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-3 text-xs font-mono">
+                            <input type="text" id="in-mapa" value='<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>' class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-3 text-xs font-mono">
                         </div>
                     </div>
 
-                    <div class="pt-6">
-                        <button type="button" onclick="copiarCodigoHTML()" class="w-full bg-wall-900 hover:bg-black text-white font-black py-4 px-8 rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.01] flex items-center justify-center space-x-3">
+                    <div class="space-y-4 pt-4 border-t border-wall-100">
+                        <h3 class="text-sm font-black text-wall-900 uppercase tracking-wider">Otras Propiedades del Anfitrión</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-wall-600">Propiedad 1</label>
+                                <input type="text" id="in-prop1-nombre" value="Monoambiente Céntrico Balcón Serrano" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium mb-2" placeholder="Nombre">
+                                <input type="url" id="in-prop1-link" value="#" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Enlace URL">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold text-wall-600">Propiedad 2</label>
+                                <input type="text" id="in-prop2-nombre" value="Duplex 2 Dormitorios Vistas al Lago" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium mb-2" placeholder="Nombre">
+                                <input type="url" id="in-prop2-link" value="#" class="w-full bg-wall-50 border border-wall-300 rounded-xl px-4 py-2.5 text-xs font-medium" placeholder="Enlace URL">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="button" onclick="copiarCodigoHTML()" class="w-full bg-wall-900 hover:bg-black text-white font-black py-4 px-8 rounded-2xl shadow-xl transition-all duration-300 flex items-center justify-center space-x-3 cursor-pointer">
                             <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
                             <span class="text-base">¡Generar y Copiar Código HTML Completo!</span>
                         </button>
                     </div>
-
-                </form>
+                </div>
             </div>
-
         </div>
     </main>
 
-    <footer class="bg-wall-950 text-wall-400 py-8 text-center text-xs border-t border-wall-900">
-        <p class="font-bold text-wall-300">Wall Host Generator v2.1 (Copiar al portapapeles)</p>
+    <footer class="bg-wall-950 text-wall-400 py-6 text-center text-xs border-t border-wall-900">
+        <p class="font-bold text-wall-300">Wall Host Generator v3.2</p>
     </footer>
 
     <script>
@@ -143,6 +155,11 @@
             
             const cochera = document.getElementById('in-cochera').value === 'true';
             const mapa = document.getElementById('in-mapa').value;
+
+            const p1Nombre = document.getElementById('in-prop1-nombre').value;
+            const p1Link = document.getElementById('in-prop1-link').value;
+            const p2Nombre = document.getElementById('in-prop2-nombre').value;
+            const p2Link = document.getElementById('in-prop2-link').value;
 
             const codigoSalida = `<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
@@ -194,8 +211,8 @@
             ],
             iframeMapa: '${mapa}',
             otrasPropiedades: [
-                { nombreDepto: "Monoambiente Céntrico Balcón Serrano", linkDepto: "#", imagenVista: "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=800&q=80" },
-                { nombreDepto: "Duplex 2 Dormitorios Vistas al Lago", linkDepto: "#", imagenVista: "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&q=80" }
+                { nombreDepto: "${p1Nombre}", linkDepto: "${p1Link}", imagenVista: "${img2}" },
+                { nombreDepto: "${p2Nombre}", linkDepto: "${p2Link}", imagenVista: "${img3}" }
             ]
         };
     </script>
@@ -208,35 +225,34 @@
                 </div>
                 <span class="text-2xl font-black tracking-tight text-wall-900">Wall<span class="text-wall-500">Host</span></span>
             </a>
-            <a href="https://wa.me/${whatsapp}" target="_blank" class="bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-4 py-2 rounded-xl transition-all border border-emerald-200 flex items-center space-x-2 text-xs font-semibold">
+            <a href="#" id="btn-whatsapp-header" target="_blank" class="bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-4 py-2 rounded-xl transition-all border border-emerald-200 flex items-center space-x-2 text-xs font-semibold">
                 <span>Asesoría WhatsApp</span>
             </a>
         </div>
     </header>
 
-    <div id="toast-copiado" class="fixed bottom-6 right-6 z-50 bg-wall-900 text-white text-xs font-bold px-5 py-3 rounded-2xl shadow-2xl border border-wall-700 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-2">
+    <div id="toast-compartir" class="fixed bottom-6 right-6 z-50 bg-wall-900 text-white text-xs font-bold px-5 py-3 rounded-2xl shadow-2xl border border-wall-700 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-2">
         <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
         <span>¡Enlace copiado con el mensaje institucional!</span>
     </div>
 
     <main class="flex-grow pt-32 pb-20 px-6">
         <div class="max-w-6xl mx-auto space-y-12">
-            
             <div class="space-y-3 border-b border-wall-200 pb-8">
                 <div class="flex flex-wrap items-center justify-between gap-4">
                     <span class="text-xs uppercase tracking-wider text-wall-700 font-bold bg-wall-100 px-4 py-2 rounded-full border border-wall-200 shadow-sm">
-                        Anfitrión: ${anfitrion}
+                        Anfitrión: \${datosDepartamento.anfitrion}
                     </span>
                     <div class="flex items-center space-x-3">
-                        <button onclick="compartirPropiedad()" class="bg-white hover:bg-wall-100 text-wall-800 font-bold text-xs px-4 py-2 rounded-full border border-wall-300 shadow-sm flex items-center space-x-2 transition-all">
+                        <button onclick="compartirPropiedad()" class="bg-white hover:bg-wall-100 text-wall-800 font-bold text-xs px-4 py-2 rounded-full border border-wall-300 shadow-sm flex items-center space-x-2 transition-all cursor-pointer">
                             <svg class="w-4 h-4 text-wall-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
                             <span>Compartir Propiedad</span>
                         </button>
                         <span class="text-xs bg-emerald-50 text-emerald-800 font-bold px-3.5 py-1.5 rounded-full border border-emerald-200">Dueño Directo Verificado</span>
                     </div>
                 </div>
-                <h1 class="text-3xl sm:text-5xl font-black text-wall-950 tracking-tight">${titulo}</h1>
-                <p class="text-wall-600 text-base sm:text-lg max-w-3xl leading-relaxed">${descripcion}</p>
+                <h1 class="text-3xl sm:text-5xl font-black text-wall-950 tracking-tight">\${datosDepartamento.titulo}</h1>
+                <p class="text-wall-600 text-base sm:text-lg max-w-3xl leading-relaxed">\${datosDepartamento.descripcion}</p>
             </div>
 
             <div class="space-y-4">
@@ -264,10 +280,17 @@
             </div>
 
             <div class="bg-white rounded-3xl p-8 sm:p-10 border border-wall-200 shadow-xl space-y-6">
-                <h3 class="text-2xl font-black text-wall-900">Ubicación Estratégica</h3>
-                <div class="rounded-2xl overflow-hidden border border-wall-200">${mapa}</div>
+                <div class="space-y-1">
+                    <span class="text-xs uppercase tracking-widest text-wall-500 font-extrabold">Portafolio Exclusivo</span>
+                    <h3 class="text-2xl font-black text-wall-900">Más Alojamientos de este Anfitrión</h3>
+                </div>
+                <div id="contenedor-otras-propiedades" class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2"></div>
             </div>
 
+            <div class="bg-white rounded-3xl p-8 sm:p-10 border border-wall-200 shadow-xl space-y-6">
+                <h3 class="text-2xl font-black text-wall-900">Ubicación Estratégica</h3>
+                <div class="rounded-2xl overflow-hidden border border-wall-200">\${datosDepartamento.iframeMapa}</div>
+            </div>
         </div>
     </main>
 
@@ -276,57 +299,72 @@
     </footer>
 
     <script>
-        const mensajeWsp = encodeURIComponent("Te envio el Wall Host Verificado de mi propiedad asi vez todos los detalles a totalidad:");
         const urlWspFinal = \`https://wa.me/\${datosDepartamento.whatsappAnfitrion}?text=\${encodeURIComponent("Hola " + datosDepartamento.anfitrion + ", vi tu departamento (" + datosDepartamento.titulo + ") en Wall Host y quiero consultar disponibilidad.")}\`;
         document.getElementById('btn-contratar').href = urlWspFinal;
+        document.getElementById('btn-whatsapp-header').href = urlWspFinal;
 
         function compartirPropiedad() {
             const urlActual = window.location.href;
-            const textoPersonalizado = "Te envio el Wall Host Verificado de mi propiedad asi vez todos los detalles a totalidad:\\n\\n" + urlActual;
+            const textoPersonalizado = "Te envio el Wall Host Verificado de mi propiedad asi ves todos los detalles:\\n\\n" + urlActual;
             navigator.clipboard.writeText(textoPersonalizado).then(() => {
-                const toast = document.getElementById('toast-copiado');
+                const toast = document.getElementById('toast-compartir');
                 toast.classList.remove('translate-y-20', 'opacity-0');
                 setTimeout(() => { toast.classList.add('translate-y-20', 'opacity-0'); }, 3000);
             });
         }
 
-        // Render galería
         const contImg = document.getElementById('contenedor-imagenes');
-        datosDepartamento.imagenes.forEach((url, i) => {
+        datosDepartamento.imagenes.forEach((url) => {
             contImg.innerHTML += \`<div class="h-64 rounded-2xl overflow-hidden border border-wall-200 bg-wall-100 shadow-sm relative"><img src="\${url}" class="w-full h-full object-cover"></div>\`;
         });
 
-        // Render edificio
         const contEd = document.getElementById('contenedor-edificio');
         datosDepartamento.caracteristicasEdificio.forEach(item => {
             contEd.innerHTML += \`<div class="bg-wall-50 p-6 rounded-2xl border border-wall-200 space-y-3"><div class="w-12 h-12 bg-wall-700 text-white rounded-2xl flex items-center justify-center"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="\${item.icono}"/></svg></div><h4 class="font-black text-wall-900">\${item.titulo}</h4><p class="text-xs text-wall-600">\${item.texto}</p></div>\`;
         });
 
-        // Cochera
         const contCochera = document.getElementById('contenedor-cochera');
         if (datosDepartamento.cochera) {
             contCochera.innerHTML = \`<div class="bg-wall-800 border border-emerald-500/40 p-6 rounded-2xl flex items-center space-x-4"><div class="w-11 h-11 bg-emerald-600/20 text-emerald-400 rounded-xl flex items-center justify-center"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><div><h4 class="font-black text-white">Cochera Cubierta Incluida</h4><p class="text-xs text-wall-300">Este departamento cuenta con cochera privada dentro del edificio.</p></div></div>\`;
         }
 
-        // Detalles
         const contDet = document.getElementById('contenedor-detalles');
         datosDepartamento.detallesAlojamiento.forEach(item => {
             contDet.innerHTML += \`<div class="bg-wall-800 border border-wall-700 p-6 rounded-2xl space-y-3"><div class="w-11 h-11 bg-wall-700 text-wall-200 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="\${item.icono}"/></svg></div><h4 class="font-black text-white">\${item.titulo}</h4><p class="text-xs text-wall-300">\${item.texto}</p></div>\`;
+        });
+
+        const contOtras = document.getElementById('contenedor-otras-propiedades');
+        datosDepartamento.otrasPropiedades.forEach(prop => {
+            contOtras.innerHTML += \`<a href="\${prop.linkDepto}" class="group bg-wall-50 border border-wall-200 hover:border-wall-400 rounded-2xl p-4 flex items-center space-x-4 transition-all"><div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-wall-200"><img src="\${prop.imagenVista}" class="w-full h-full object-cover group-hover:scale-105 transition-all"></div><div><h4 class="font-bold text-wall-900 group-hover:text-wall-600 text-sm">\${prop.nombreDepto}</h4><span class="text-xs font-semibold text-wall-500 mt-1 inline-block">Ver propiedad →</span></div></a>\`;
         });
     </script>
 </body>
 </html>`;
 
-            // Copiar directamente al portapapeles
-            navigator.clipboard.writeText(codigoSalida).then(() => {
-                const toast = document.getElementById('toast-copiado');
-                toast.classList.remove('translate-y-20', 'opacity-0');
-                setTimeout(() => {
-                    toast.classList.add('translate-y-20', 'opacity-0');
-                }, 4000);
-            }).catch(err => {
-                alert('No se pudo copiar automáticamente. Revisa los permisos del navegador.');
-            });
+            // MÉTODO ROBUSTO DE COPIADO MULTIPLATAFORMA
+            try {
+                const textarea = document.createElement('textarea');
+                textarea.value = codigoSalida;
+                textarea.style.position = 'fixed';  
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.focus();
+                textarea.select();
+                
+                const resultado = document.execCommand('copy');
+                document.body.removeChild(textarea);
+
+                if (resultado) {
+                    const toast = document.getElementById('toast-copiado');
+                    toast.classList.remove('translate-y-20', 'opacity-0');
+                    setTimeout(() => { toast.classList.add('translate-y-20', 'opacity-0'); }, 4000);
+                } else {
+                    throw new Error('Fallback falló');
+                }
+            } catch (e) {
+                // RESPALDO FINAL: Abre un cuadro seleccionable si el navegador bloquea el portapapeles
+                window.prompt("Tu navegador bloqueó el copiado automático. Presiona Ctrl+C para copiar:", codigoSalida);
+            }
         }
     </script>
 </body>
